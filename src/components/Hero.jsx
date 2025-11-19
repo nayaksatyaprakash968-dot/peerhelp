@@ -2,35 +2,61 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 
-export default function Hero() {
+export default function Hero({ onGetStarted }) {
   return (
-    <section className="pt-32 pb-20 max-w-7xl mx-auto px-6 text-center">
-      <h1 className="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">
-        Learn. Share. Grow Together with{" "}
-        <span className="text-blue-600">PeerHelp</span>
-      </h1>
+    <section className="pt-28 pb-20 px-6 bg-gradient-to-b from-blue-50 to-white">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        
+        {/* LEFT TEXT */}
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+            Empowering Students Through <span className="text-blue-600">Peer Learning</span>
+          </h1>
 
-      <p className="mt-6 text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-        A community-driven platform where students connect, help each other,
-        share notes, ask doubts, and grow together.
-      </p>
+          <p className="mt-4 text-lg text-gray-600">
+            A community-driven platform where students connect, help each other,
+            share notes, ask doubts, and grow together.
+          </p>
 
-      <div className="mt-8 flex justify-center gap-4">
-        <button className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition flex items-center gap-2">
-          Get Started <ArrowRight size={18} />
-        </button>
+          <div className="flex gap-4 mt-6">
+            <button
+              onClick={onGetStarted}
+              className="px-6 py-3 rounded-xl bg-blue-600 text-white font-medium hover:bg-blue-700 transition flex items-center gap-2 shadow-sm"
+            >
+              Get Started <ArrowRight size={20} />
+            </button>
 
-        <button className="px-6 py-3 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition">
-          Explore
-        </button>
-      </div>
+            <button
+              onClick={() =>
+                document.getElementById("features")?.scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+              className="px-6 py-3 rounded-xl border border-blue-600 text-blue-600 font-medium hover:bg-blue-50 transition"
+            >
+              Explore
+            </button>
+          </div>
+        </div>
 
-      <div className="mt-12">
-        <img
-          src="https://cdn.dribbble.com/userupload/14003739/file/original-ef07420d6a69249566392ea78fc1b7aa.png?resize=1200x900"
-          alt="Hero Illustration"
-          className="mx-auto w-full max-w-3xl rounded-xl shadow-lg"
-        />
+        {/* RIGHT ILLUSTRATION */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-md h-64 rounded-3xl bg-gradient-to-tr from-blue-100 to-blue-50 shadow-xl border border-blue-100 p-6 flex items-center justify-center relative overflow-hidden">
+
+            {/* Floating decorative shapes */}
+            <div className="absolute top-6 left-6 w-16 h-16 rounded-2xl bg-blue-200/40 blur-xl"></div>
+            <div className="absolute bottom-10 right-10 w-20 h-20 rounded-full bg-blue-300/40 blur-lg"></div>
+
+            {/* Illustration text */}
+            <div className="relative text-center">
+              <h3 className="text-xl font-semibold text-blue-600 mb-2">PeerHelp Community</h3>
+              <p className="text-gray-500 text-sm">
+                A simple visual placeholder until final illustrations are added.
+              </p>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
   );
