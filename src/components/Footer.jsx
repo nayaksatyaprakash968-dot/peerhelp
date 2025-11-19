@@ -1,8 +1,14 @@
+// src/components/Footer.jsx
+import React from "react";
+
 export default function Footer() {
-return (
-<footer id="contact" className="py-10 bg-gray-900 text-gray-300 text-center">
-<p className="mb-2">PeerHelp © 2025</p>
-<p>Made with ❤️ for students</p>
-</footer>
-);
+  return (
+    <footer className="py-10 bg-white border-t text-center">
+      <h3 className="text-xl font-bold text-blue-700">PeerHelp</h3>
+      <p className="text-gray-600 mt-2">
+        A student-first platform built to learn and grow together.
+      </p>
+      <p className="text-gray-500 text-sm mt-4">© 2025 PeerHelp. All rights reserved.</p>
+    </footer>
+  );
 }
